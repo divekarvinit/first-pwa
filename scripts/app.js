@@ -364,6 +364,7 @@
   // TODO add service worker code here
 
     if ('serviceWorker' in navigator) {
+      console.log('Registering Service Worker');
     navigator.serviceWorker
              .register('/service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
@@ -377,9 +378,9 @@ document.getElementById('butAddCity').addEventListener('click', function() {
     var selected = select.options[select.selectedIndex];
     var key = selected.value;
     var label = selected.textContent;
-    // if (!app.selectedCities) {
-    //   app.selectedCities = [];
-    // }
+    if (!app.selectedCities) {
+      app.selectedCities = [];
+    }
     app.getForecast(key, label);
     app.selectedCities.push({key: key, label: label});
     app.saveSelectedCities();
