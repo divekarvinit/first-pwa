@@ -366,7 +366,7 @@
     if ('serviceWorker' in navigator) {
       console.log('Registering Service Worker');
     navigator.serviceWorker
-             .register('../service-worker.js')
+             .register('/first-pwa/service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
   }
 
